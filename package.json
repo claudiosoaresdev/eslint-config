@@ -1,12 +1,21 @@
 {
   "name": "@claudiosoaresdev/eslint-config",
-  "description": "ESLint configuration used by Rocketseat.",
   "version": "1.0.0",
+  "description": "A custom ESLint configuration for my projects.",
   "private": false,
   "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "javascript",
+    "typescript"
+  ],
   "license": "MIT",
-  "keywords": [],
-  "author": "claudiosoaresdev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudiosoaresdev/eslint-config.git"
+  },
+  "author": "Claudio Soares",
   "peerDependencies": {
     "eslint": "^8.0.0",
     "typescript": ">=5"
