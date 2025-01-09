@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'standard',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
@@ -19,6 +20,7 @@ module.exports = {
   },
   plugins: [
     'jsx-a11y',
+    'react',
     '@typescript-eslint'
   ],
   rules: {
