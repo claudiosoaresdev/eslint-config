@@ -19,9 +19,9 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'jsx-a11y',
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'jsx-a11y'
   ],
   rules: {
     'prettier/prettier': ["error", {
