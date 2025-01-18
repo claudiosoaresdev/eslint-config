@@ -42,5 +42,12 @@ module.exports = {
     'simple-import-sort/exports': 'error', // Ordena exports automaticamente
     'unused-imports/no-unused-imports': 'warn', // Remove imports não utilizados
     'security/detect-object-injection': 'off', // Desabilita falsos positivos para objetos dinâmicos
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_', // Ignora argumentos iniciados com "_"
+        varsIgnorePattern: '^_', // Ignora variáveis iniciadas com "_"
+      },
+    ],
   },
 };

@@ -1,6 +1,6 @@
 {
   "name": "@claudiosoaresdev/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A custom ESLint configuration for my projects.",
   "private": false,
   "main": "index.js",
@@ -25,7 +25,7 @@
     }
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.19.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
