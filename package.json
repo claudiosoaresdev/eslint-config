@@ -1,6 +1,6 @@
 {
   "name": "@claudiosoaresdev/eslint-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A custom ESLint configuration for my projects.",
   "private": false,
   "main": "index.js",
