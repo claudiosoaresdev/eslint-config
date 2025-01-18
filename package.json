@@ -1,6 +1,6 @@
 {
   "name": "@claudiosoaresdev/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom ESLint configuration for my projects.",
   "private": false,
   "main": "index.js",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
-    "eslint": "^8.0.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.31.0",
@@ -37,6 +37,11 @@
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9"
   }
