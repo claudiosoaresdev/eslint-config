@@ -13,8 +13,13 @@ module.exports = {
     },
   },
   plugins: [
-    'jsx-a11y',
+    'react', // Adiciona o plugin React
+    'jsx-a11y', // Suporte para acessibilidade em JSX
     ...require('./base').plugins,
+  ],
+  extends: [
+    ...require('./base').extends,
+    'plugin:react/recommended', // Regras recomendadas para React
   ],
   rules: {
     ...require('./base').rules,
