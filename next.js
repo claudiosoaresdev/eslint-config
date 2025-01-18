@@ -1,17 +1,43 @@
 /**
  * Configuração específica para projetos Next.js.
- * Extende as configurações de React com regras adicionais para acessibilidade e estrutura.
  */
 module.exports = {
-  ...require('./react'), // Extende a configuração de React
-  extends: [
-    ...require('./react').extends, // Mantém as extensões da configuração React
-  ],
+  ...require('./base'),
+  env: {
+    browser: true, // Ambiente do navegador
+    jest: true, // Variáveis do Jest
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true, // Suporte para JSX
+    },
+  },
   plugins: [
-    ...require('./react').plugins, // Mantém os plugins da configuração React
-    'react-refresh', // Suporte ao React Refresh
+    'jsx-a11y',
+    ...require('./base').plugins,
   ],
   rules: {
-    'react-refresh/only-export-components': 'warn', // Garante melhores práticas no React Refresh
+    ...require('./base').rules,
+    'jsx-a11y/alt-text': [
+      'warn',
+      {
+        elements: ['img'],
+        img: ['Image'],
+      },
+    ],
+    'jsx-a11y/aria-props': 'warn',
+    'jsx-a11y/aria-proptypes': 'warn',
+    'jsx-a11y/aria-unsupported-elements': 'warn',
+    'jsx-a11y/role-has-required-aria-props': 'warn',
+    'jsx-a11y/role-supports-aria-props': 'warn',
+    'react/no-unknown-property': 'error',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    },
   },
 };
