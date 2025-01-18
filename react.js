@@ -1,27 +1,42 @@
-/**
- * Configuração específica para projetos React.
- */
 module.exports = {
-  ...require('./base'),
   env: {
-    browser: true, // Variáveis globais do navegador
-    jest: true, // Variáveis globais para testes com Jest
+    browser: true,
+    es2021: true,
+    jest: true,
   },
   extends: [
-    'plugin:react/recommended', // Regras recomendadas para React
-    'plugin:react-hooks/recommended', // Regras para React Hooks
-    ...require('./base').extends,
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'standard',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
   plugins: [
     'react',
     'jsx-a11y',
-    ...require('./base').plugins,
+    '@typescript-eslint'
   ],
   rules: {
-    ...require('./base').rules,
-    'react/self-closing-comp': 'error', // Força fechamento automático de tags sem filhos
-    'react/react-in-jsx-scope': 'off', // Desabilitado para projetos com React 17+
-    'react/prop-types': 'off', // Desabilitado para projetos com TypeScript
+    "react/self-closing-comp": "error",
+    'prettier/prettier': ["error", {
+      'printWidth': 80,
+      'tabWidth': 2,
+      'singleQuote': true,
+      'trailingComma': 'all',
+      'arrowParens': 'always',
+      'semi': false,
+      'endOfLine': 'auto',
+    }],
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     'jsx-a11y/alt-text': [
       'warn',
       {
@@ -34,11 +49,17 @@ module.exports = {
     'jsx-a11y/aria-unsupported-elements': 'warn',
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
+    'react/no-unknown-property': 'error',
   },
   settings: {
     react: {
       version: 'detect',
     },
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    },
   },
-  ignorePatterns: ['node_modules'],
-};
+  ignorePatterns: [
+    'node_modules'
+  ]
+}

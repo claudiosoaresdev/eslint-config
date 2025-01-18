@@ -1,28 +1,36 @@
-/**
- * Configuração específica para projetos Next.js.
- */
 module.exports = {
-  ...require('./base'),
   env: {
-    browser: true, // Ambiente do navegador
-    jest: true, // Variáveis do Jest
+    browser: true,
+    es2021: true,
+    jest: true,
   },
+  extends: [
+    'standard',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true, // Suporte para JSX
+      jsx: true
     },
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   plugins: [
-    'react', // Adiciona o plugin React
-    'jsx-a11y', // Suporte para acessibilidade em JSX
-    ...require('./base').plugins,
-  ],
-  extends: [
-    ...require('./base').extends,
-    'plugin:react/recommended', // Regras recomendadas para React
+    'jsx-a11y',
+    '@typescript-eslint'
   ],
   rules: {
-    ...require('./base').rules,
+    'prettier/prettier': ["error", {
+      'printWidth': 80,
+      'tabWidth': 2,
+      'singleQuote': true,
+      'trailingComma': 'all',
+      'arrowParens': 'always',
+      'semi': false,
+      'endOfLine': 'auto',
+    }],
     'jsx-a11y/alt-text': [
       'warn',
       {
@@ -41,5 +49,8 @@ module.exports = {
     react: {
       version: 'detect',
     },
-  },
-};
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    },
+  }
+}
